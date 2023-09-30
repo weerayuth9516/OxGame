@@ -253,10 +253,10 @@ function OxGame() {
                     3. Each player can choose their preferred symbol: X or O.
                   </li>
                   <li className="mb-2">
-                    4. After the game begins, you cannot choose a new symbol.
+                    4. After the game begins, player cannot choose a new symbol.
                   </li>
                   <li className="mb-2">
-                    5. If the user is the loser, they will have the opportunity
+                    5. If the player is the loser, they will have the opportunity
                     to start the game first.
                   </li>
                   <li className="mb-1">
@@ -265,7 +265,7 @@ function OxGame() {
                   </li>
                 </ol>
               </div>
-              <div className="font-bold text-center text-[48px] mt-1 text-orange-400">
+              <div className="font-bold text-center text-[36px] text-orange-400">
                 Have Fun!
               </div>
             </section>
