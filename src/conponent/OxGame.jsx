@@ -215,12 +215,12 @@ function OxGame() {
             </div>
           </section>
           {!showHowToPlay && (
-            <section className="w-[160px] h-[600px] ml-5 mt-10">
+            <section className="w-[130px] h-[600px] ml-5 mt-10">
               <button
                 onClick={() => setShowHowToPlay(true)}
                 className="w-full text-[18px] border-2 hover:text-blue-500 hover:font-bold rounded-lg"
               >
-                Read How to Play
+                How to Play
               </button>
             </section>
           )}
