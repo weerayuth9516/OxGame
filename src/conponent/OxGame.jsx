@@ -70,7 +70,7 @@ function OxGame() {
   );
   return (
     <>
-      <main className="w-[100%] flex justify-center items-center gap-x-10">
+      <main className="w-[100vw] flex justify-center items-center gap-x-10">
         <div className="w-[100%] flex sm:flex-col xl:flex-row justify-center items-center">
           <section className="w-[600px] h-[600px] grid grid-cols-3 mt-10">
             {Array(9)
