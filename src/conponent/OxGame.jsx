@@ -110,7 +110,7 @@ function OxGame() {
             <div className="w-[100%] flex justify-center mt-5 gap-8">
               <div className="w-[50%] font-bold text-[20px] ml-9">
                 <p className="text-center text-black w-20 bg-yellow-300 border-1 rounded-lg shadow-lg mb-4">
-                  User1
+                Player1
                 </p>
                 <button
                   onClick={handleUser1ClickX}
@@ -143,7 +143,7 @@ function OxGame() {
               </div>
               <div className="w-[50%] font-bold text-[20px] text-left">
                 <p className="text-center text-black w-20 bg-yellow-300 border-1 rounded-lg shadow-lg mb-4">
-                  User2
+                  Player2
                 </p>
                 <button
                   onClick={handleUser2ClickX}
@@ -192,7 +192,6 @@ function OxGame() {
                     ? "scale-150 transition-all duration-500 ease-in-out delay-300"
                     : ""
                 }
-
                 ${
                   winner && winner === "No Winner"
                     ? "scale-125 transition-all duration-500 ease-in-out delay-300"
@@ -204,11 +203,11 @@ function OxGame() {
               {winner && winner !== "No Winner" && (
                 <>
                   <div className="text-[20px] font-bold mt-4">Belong to</div>
-                  <div className="text-[48px] mt-2 ">
+                  <div className="text-[48px] mt-1 ">
                     {winner === user1Symbol
-                      ? "User1"
+                      ? "Player1"
                       : winner === user2Symbol
-                      ? "User2"
+                      ? "Player2"
                       : ""}
                   </div>{" "}
                 </>
