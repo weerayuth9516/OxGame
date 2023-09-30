@@ -16,6 +16,8 @@ function useOxGame() {
   const [beginSymbol, setBeginSymbol] = useState("X");
   const [winPattern, setWinPattern] = useState(Array(9).fill(false));
   const [showHowToPlay, setShowHowToPlay] = useState(false);
+  const [turnUser1, setTurnUser1] = useState(true);
+  const [turnUser2, setTurnUser2] = useState(false);
 
   const handleStartNewGame = () => {
     setData(Array(9).fill({ round: 0, area: 0, type: "" }));
@@ -24,6 +26,8 @@ function useOxGame() {
     setTypeToCheck("");
     setRoundNumber(0);
     setWinPattern(Array(9).fill(false));
+    setTurnUser1(beginWithUser === "user1");
+    setTurnUser2(beginWithUser === "user2");
   };
 
   function checkForWin(data, typeToCheck) {
@@ -228,6 +232,10 @@ function useOxGame() {
     setWinPattern,
     showHowToPlay,
     setShowHowToPlay,
+    turnUser1,
+    setTurnUser1,
+    turnUser2,
+    setTurnUser2,
   };
 }
 

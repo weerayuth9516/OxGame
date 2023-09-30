@@ -35,6 +35,8 @@ function OxGame() {
     winPattern,
     showHowToPlay,
     setShowHowToPlay,
+    turnUser1,setTurnUser1,
+    turnUser2,setTurnUser2,
   } = useOxGame();
 
   useEffect(() => {
@@ -44,11 +46,15 @@ function OxGame() {
       if (winner === user1Symbol) {
         setUser1Win((prevUser1Win) => prevUser1Win + 1);
         setBeginWithUser("user2");
+        setTurnUser1(false)
+        setTurnUser2(true)
         setBeginSymbol(user2Symbol);
       }
       if (winner === user2Symbol) {
         setUser2Win((prevUser2Win) => prevUser2Win + 1);
         setBeginWithUser("user1");
+        setTurnUser2(false)
+        setTurnUser1(true)
         setBeginSymbol(user1Symbol);
       }
     }
@@ -91,6 +97,8 @@ function OxGame() {
                     setTypeToCheck(newType);
                     handleClick(roundNumber + 1, index + 1, newType);
                     if (!isClicked[index]) {
+                      setTurnUser1(!turnUser1)
+                      setTurnUser2(!turnUser2)
                       setRoundNumber((prevRoundNumber) => prevRoundNumber + 1);
                       CheckProgress(roundNumber + 1, index + 1, newType);
                     }
@@ -119,7 +127,7 @@ function OxGame() {
                       ? "bg-blue-500 text-white rounded-full"
                       : ""
                   }`}
-                  disabled={roundNumber >= 1}
+                  disabled={roundNumber >= 1 || beginWithUser === "user2"}
                 >
                   X
                 </button>
@@ -130,14 +138,14 @@ function OxGame() {
                       ? "bg-blue-500 text-white rounded-full"
                       : ""
                   }`}
-                  disabled={roundNumber >= 1}
+                  disabled={roundNumber >= 1 || beginWithUser === "user2"}
                 >
                   O
                 </button>
                 <div className="inline ml-3 mt-2">Win {user1Win}</div>
-                {beginWithUser === "user1" && (
+                {turnUser1 && (
                   <div className="ml-3 mt-3 text-white text-center w-[60px] bg-green-500 rounded-lg">
-                    Start
+                    Turn
                   </div>
                 )}
               </div>
@@ -152,7 +160,7 @@ function OxGame() {
                       ? "bg-blue-500 text-white rounded-full"
                       : ""
                   }`}
-                  disabled={roundNumber >= 1}
+                  disabled={roundNumber >= 1 || beginWithUser === "user1"}
                 >
                   X
                 </button>
@@ -163,14 +171,14 @@ function OxGame() {
                       ? "bg-blue-500 text-white rounded-full"
                       : ""
                   }`}
-                  disabled={roundNumber >= 1}
+                  disabled={roundNumber >= 1 || beginWithUser === "user1"}
                 >
                   O
                 </button>
                 <div className="inline ml-3 mt-2">Win {user2Win}</div>
-                {beginWithUser === "user2" && (
+                {turnUser2 && (
                   <div className="ml-3 mt-3 text-white text-center w-[60px] bg-green-500 rounded-lg">
-                    Start
+                    Turn
                   </div>
                 )}
               </div>
@@ -250,7 +258,7 @@ function OxGame() {
                     2. If no player has three in a row, the game is a draw.
                   </li>
                   <li className="mb-2">
-                    3. Each player can choose their preferred symbol: X or O.
+                    3. Players who start the game can choose their preferred symbol: X or O.
                   </li>
                   <li className="mb-2">
                     4. After the game begins, player cannot choose a new symbol.
