@@ -227,7 +227,7 @@ function OxGame() {
             </section>
           )}
           {showHowToPlay && (
-            <section className="w-[300px] h-[600px] border-2 border-violet-500 ml-[50px] mt-10">
+            <section className="w-[300px] h-[600px] border-2 border-violet-500 ml-[30px] mt-10">
               <div className="relative">
                 <img
                   onClick={() => setShowHowToPlay(false)}
@@ -235,7 +235,10 @@ function OxGame() {
                   src={CloseIcon}
                 />
               </div>
-              <div className="font-bold text-[18px] text-center mt-5 underline">
+              <div className="font-bold text-[24px] text-left ml-2 mt-3">
+                OX Game
+              </div>
+              <div className="font-bold text-[18px] text-center mt-4 underline">
                 How to Play
               </div>
               <div className="text-[16px] text-left mt-2 p-2">
@@ -258,13 +261,13 @@ function OxGame() {
                     5. If the user is the loser, they will have the opportunity
                     to start the game first.
                   </li>
-                  <li className="mb-2">
+                  <li className="mb-1">
                     6. Please don't refresh the page while playing the game to
                     keep track of the win count.
                   </li>
                 </ol>
               </div>
-              <div className="font-bold text-center text-[48px] mt-2 text-orange-400">
+              <div className="font-bold text-center text-[48px] mt-1 text-orange-400">
                 Have Fun!
               </div>
             </section>
