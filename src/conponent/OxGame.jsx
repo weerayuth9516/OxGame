@@ -49,11 +49,15 @@ function OxGame() {
         setUser1Win((prevUser1Win) => prevUser1Win + 1);
         setBeginWithUser("user2");
         setBeginSymbol(user2Symbol);
+        setTurnUser1(true);
+        setTurnUser2(false);
       }
       if (winner === user2Symbol) {
         setUser2Win((prevUser2Win) => prevUser2Win + 1);
         setBeginWithUser("user1");
         setBeginSymbol(user1Symbol);
+        setTurnUser1(false);
+        setTurnUser2(true);
       }
     }
     if (roundNumber === 9 && winner === "") {
@@ -115,7 +119,11 @@ function OxGame() {
           <section className="w-[300px] h-[600px] flex flex-col border-2 border-violet-500 ml-[50px] mt-10">
             <div className="w-[100%] flex justify-center mt-5 gap-8">
               <div className="w-[50%] font-bold text-[20px] ml-9">
-              <p className={`text-center text-black w-20 ${turnUser1 ? 'bg-green-300' : 'bg-yellow-300'} border-1 rounded-lg shadow-lg mb-4`}>
+                <p
+                  className={`text-center text-black w-20 ${
+                    turnUser1 ? "bg-green-300" : "bg-yellow-300"
+                  } border-1 rounded-lg shadow-lg mb-4`}
+                >
                   Player1
                 </p>
                 <button
@@ -148,7 +156,11 @@ function OxGame() {
                 )}
               </div>
               <div className="w-[50%] font-bold text-[20px] text-left">
-              <p className={`text-center text-black w-20 ${turnUser2 ? 'bg-green-300' : 'bg-yellow-300'} border-1 rounded-lg shadow-lg mb-4`}>
+                <p
+                  className={`text-center text-black w-20 ${
+                    turnUser2 ? "bg-green-300" : "bg-yellow-300"
+                  } border-1 rounded-lg shadow-lg mb-4`}
+                >
                   Player2
                 </p>
                 <button
