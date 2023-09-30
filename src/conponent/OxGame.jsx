@@ -106,18 +106,18 @@ function OxGame() {
                 </div>
               ))}
           </section>
-          <section className="w-[300px] h-[600px] border-2 border-violet-500 ml-[50px] mt-10">
+          <section className="w-[300px] h-[600px] flex flex-col border-2 border-violet-500 ml-[50px] mt-10">
             {/* <div>How to play</div> */}
-            <div className="w-full h-[200px] flex justify-start ml-8 mt-5">
-              <div className="w-[50%] font-bold text-[20px] text-left">
+            <div className="w-[100%] flex justify-center mt-5 gap-8">
+              <div className="w-[50%] font-bold text-[20px] ml-9">
                 <p className="text-center text-black w-20 bg-yellow-300 border-1 rounded-lg shadow-lg mb-4">
                   User1
                 </p>
                 <button
                   onClick={handleUser1ClickX}
-                  className={`block text-[36px] ml-5 mb-2 ${
+                  className={`w-[50%] block text-[36px] ml-3 mb-2 ${
                     user1Symbol === "X"
-                      ? "bg-blue-500 w-[50px] text-white rounded-full"
+                      ? "bg-blue-500 text-white rounded-full"
                       : ""
                   }`}
                   disabled={roundNumber >= 1}
@@ -126,16 +126,16 @@ function OxGame() {
                 </button>
                 <button
                   onClick={handleUser1ClickO}
-                  className={`block text-[36px] ml-5 ${
+                  className={`w-[50%] block text-[36px] ml-3 mb-4 ${
                     user1Symbol === "O"
-                      ? "bg-blue-500 w-[50px] text-white rounded-full"
+                      ? "bg-blue-500 text-white rounded-full"
                       : ""
                   }`}
                   disabled={roundNumber >= 1}
                 >
                   O
                 </button>
-                <div className="inline ml-3">Win {user1Win}</div>
+                <div className="inline ml-3 mt-2">Win {user1Win}</div>
                 {beginWithUser === "user1" && (
                   <div className="ml-3 mt-3 text-white text-center w-[60px] bg-green-500 rounded-lg">
                     Start
@@ -148,9 +148,9 @@ function OxGame() {
                 </p>
                 <button
                   onClick={handleUser2ClickX}
-                  className={`block text-[36px] ml-5 mb-2 ${
+                  className={`w-[50%] block text-[36px] ml-3 mb-2 ${
                     user2Symbol === "X"
-                      ? "bg-blue-500 w-[50px] text-white rounded-full"
+                      ? "bg-blue-500 text-white rounded-full"
                       : ""
                   }`}
                   disabled={roundNumber >= 1}
@@ -159,9 +159,9 @@ function OxGame() {
                 </button>
                 <button
                   onClick={handleUser2ClickO}
-                  className={`block text-[36px] ml-5 ${
+                  className={`w-[50%] block text-[36px] ml-3 mb-4 ${
                     user2Symbol === "O"
-                      ? "bg-blue-500 w-[50px] text-white rounded-full"
+                      ? "bg-blue-500 text-white rounded-full"
                       : ""
                   }`}
                   disabled={roundNumber >= 1}
@@ -170,13 +170,13 @@ function OxGame() {
                 </button>
                 <div className="inline ml-3 mt-2">Win {user2Win}</div>
                 {beginWithUser === "user2" && (
-                  <div className="ml-3 mt-3 text-white text-center w-[60px] bg-green-500 rounded-lg">
+                  <div className="ml-3 text-white text-center w-[60px] bg-green-500 rounded-lg">
                     Start
                   </div>
                 )}
               </div>
             </div>
-            <div className="flex justify-center items-center mt-10">
+            <div className="flex justify-center items-center mt-1">
               <button
                 onClick={handleStartNewGame}
                 className="font-bold text-white text-[18px] w-[180px] h-[50px] bg-blue-500 cursor-pointer rounded-lg shadow-xl mt-5 hover:border-4 hover:border-green-500"
@@ -204,7 +204,7 @@ function OxGame() {
               </div>
               {winner && winner !== "No Winner" && (
                 <>
-                  <div className="text-[20px] font-bold mt-5">Belong to</div>
+                  <div className="text-[20px] font-bold mt-4">Belong to</div>
                   <div className="text-[48px] mt-2 ">
                     {winner === user1Symbol
                       ? "User1"
