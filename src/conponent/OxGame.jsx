@@ -35,8 +35,10 @@ function OxGame() {
     winPattern,
     showHowToPlay,
     setShowHowToPlay,
-    turnUser1,setTurnUser1,
-    turnUser2,setTurnUser2,
+    turnUser1,
+    setTurnUser1,
+    turnUser2,
+    setTurnUser2,
   } = useOxGame();
 
   useEffect(() => {
@@ -46,15 +48,11 @@ function OxGame() {
       if (winner === user1Symbol) {
         setUser1Win((prevUser1Win) => prevUser1Win + 1);
         setBeginWithUser("user2");
-        setTurnUser1(false)
-        setTurnUser2(true)
         setBeginSymbol(user2Symbol);
       }
       if (winner === user2Symbol) {
         setUser2Win((prevUser2Win) => prevUser2Win + 1);
         setBeginWithUser("user1");
-        setTurnUser2(false)
-        setTurnUser1(true)
         setBeginSymbol(user1Symbol);
       }
     }
@@ -97,8 +95,8 @@ function OxGame() {
                     setTypeToCheck(newType);
                     handleClick(roundNumber + 1, index + 1, newType);
                     if (!isClicked[index]) {
-                      setTurnUser1(!turnUser1)
-                      setTurnUser2(!turnUser2)
+                      setTurnUser1(!turnUser1);
+                      setTurnUser2(!turnUser2);
                       setRoundNumber((prevRoundNumber) => prevRoundNumber + 1);
                       CheckProgress(roundNumber + 1, index + 1, newType);
                     }
@@ -118,7 +116,7 @@ function OxGame() {
             <div className="w-[100%] flex justify-center mt-5 gap-8">
               <div className="w-[50%] font-bold text-[20px] ml-9">
                 <p className="text-center text-black w-20 bg-yellow-300 border-1 rounded-lg shadow-lg mb-4">
-                Player1
+                  Player1
                 </p>
                 <button
                   onClick={handleUser1ClickX}
@@ -258,14 +256,15 @@ function OxGame() {
                     2. If no player has three in a row, the game is a draw.
                   </li>
                   <li className="mb-2">
-                    3. Players who start the game can choose their preferred symbol: X or O.
+                    3. Players who start the game can choose their preferred
+                    symbol: X or O.
                   </li>
                   <li className="mb-2">
                     4. After the game begins, player cannot choose a new symbol.
                   </li>
                   <li className="mb-2">
-                    5. If the player is the loser, they will have the opportunity
-                    to start the game first.
+                    5. If the player is the loser, they will have the
+                    opportunity to start the game first.
                   </li>
                   <li className="mb-1">
                     6. Please don't refresh the page while playing the game to
