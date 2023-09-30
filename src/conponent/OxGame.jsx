@@ -107,7 +107,6 @@ function OxGame() {
               ))}
           </section>
           <section className="w-[300px] h-[600px] flex flex-col border-2 border-violet-500 ml-[50px] mt-10">
-            {/* <div>How to play</div> */}
             <div className="w-[100%] flex justify-center mt-5 gap-8">
               <div className="w-[50%] font-bold text-[20px] ml-9">
                 <p className="text-center text-black w-20 bg-yellow-300 border-1 rounded-lg shadow-lg mb-4">
@@ -170,7 +169,7 @@ function OxGame() {
                 </button>
                 <div className="inline ml-3 mt-2">Win {user2Win}</div>
                 {beginWithUser === "user2" && (
-                  <div className="ml-3 text-white text-center w-[60px] bg-green-500 rounded-lg">
+                  <div className="ml-3 mt-3 text-white text-center w-[60px] bg-green-500 rounded-lg">
                     Start
                   </div>
                 )}
