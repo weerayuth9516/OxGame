@@ -78,9 +78,9 @@ function OxGame() {
   );
   return (
     <>
-      <main className="w-[100vw] flex justify-center items-center gap-x-10">
-        <div className="w-[100%] flex sm:flex-col xl:flex-row justify-center items-center">
-          <section className="w-[600px] h-[600px] grid grid-cols-3 mt-10">
+      <main className="w-screen flex justify-center items-center">
+        <div className="w-full flex flex-wrap flex-col sm:flex-row xl:flex-row justify-center items-center">
+          <section className="w-full h-[25rem] sm:w-[37.5rem] xl:sm:w-[37.5rem] sm:h-[37.5rem] xl:h-[37.5rem] grid grid-cols-3 mt-10">
             {Array(9)
               .fill(null)
               .map((_, index) => (
@@ -116,11 +116,11 @@ function OxGame() {
                 </div>
               ))}
           </section>
-          <section className="w-[300px] h-[600px] flex flex-col border-2 border-violet-500 ml-[50px] mt-10">
+          <section className="w-[300px] h-[600px] flex flex-col border-2 border-violet-500 sm:ml-[2rem] xl:ml-[2rem] mt-10">
             <div className="w-[100%] flex justify-center mt-5 gap-8">
-              <div className="w-[50%] font-bold text-[20px] ml-9">
+              <div className="w-[50%] font-bold text-[20px] ml-6">
                 <p
-                  className={`text-center text-black w-20 ${
+                  className={`text-center text-black w-[6rem] ${
                     turnUser1 ? "bg-green-300" : "bg-yellow-300"
                   } border-1 rounded-lg shadow-lg mb-4`}
                 >
@@ -150,14 +150,14 @@ function OxGame() {
                 </button>
                 <div className="inline ml-3 mt-2">Win {user1Win}</div>
                 {turnUser1 && (
-                  <div className="ml-3 mt-3 text-white text-center w-[60px] bg-green-500 rounded-lg">
+                  <div className="ml-3 mt-3 text-white text-center w-[70px] bg-green-500 rounded-lg">
                     Turn
                   </div>
                 )}
               </div>
               <div className="w-[50%] font-bold text-[20px] text-left">
                 <p
-                  className={`text-center text-black w-20 ${
+                  className={`text-center text-black w-[6rem] ${
                     turnUser2 ? "bg-green-300" : "bg-yellow-300"
                   } border-1 rounded-lg shadow-lg mb-4`}
                 >
@@ -212,7 +212,7 @@ function OxGame() {
                 }
                 ${
                   winner && winner === "No Winner"
-                    ? "scale-125 transition-all duration-500 ease-in-out delay-300"
+                    ? "scale-110 transition-all duration-500 ease-in-out delay-300"
                     : ""
                 }`}
               >
@@ -232,63 +232,67 @@ function OxGame() {
               )}
             </div>
           </section>
-          {!showHowToPlay && (
-            <section className="w-[130px] h-[600px] ml-5 mt-10">
-              <button
-                onClick={() => setShowHowToPlay(true)}
-                className="w-full text-[18px] border-2 hover:text-blue-500 hover:font-bold rounded-lg"
-              >
-                How to Play
-              </button>
-            </section>
-          )}
-          {showHowToPlay && (
-            <section className="w-[300px] h-[600px] border-2 border-violet-500 ml-[30px] mt-10">
-              <div className="relative">
-                <img
-                  onClick={() => setShowHowToPlay(false)}
-                  className="absolute right-2 cursor-pointer"
-                  src={CloseIcon}
-                />
-              </div>
-              <div className="font-bold text-[24px] text-left ml-2 mt-3">
-                OX Game
-              </div>
-              <div className="font-bold text-[18px] text-center mt-4 underline">
-                How to Play
-              </div>
-              <div className="text-[16px] text-left mt-2 p-2">
-                <ol>
-                  <li className="mb-2">
-                    1. The winner is the first player to get three of their
-                    symbols (either X or O) in a row, column, or diagonal on the
-                    3x3 grid.
-                  </li>
-                  <li className="mb-2">
-                    2. If no player has three in a row, the game is a draw.
-                  </li>
-                  <li className="mb-2">
-                    3. Players who start the game can choose their preferred
-                    symbol: X or O.
-                  </li>
-                  <li className="mb-2">
-                    4. After the game begins, player cannot choose a new symbol.
-                  </li>
-                  <li className="mb-2">
-                    5. If the player is the loser, they will have the
-                    opportunity to start the game first.
-                  </li>
-                  <li className="mb-1">
-                    6. Please don't refresh the page while playing the game to
-                    keep track of the win count.
-                  </li>
-                </ol>
-              </div>
-              <div className="font-bold text-center text-[36px] text-orange-400">
-                Have Fun!
-              </div>
-            </section>
-          )}
+          <div className="w-[300px] h-[600px] mt-10 sm:ml-5 xl:ml-5">
+            {!showHowToPlay && (
+              <section className="w-[130px]">
+                <button
+                  onClick={() => setShowHowToPlay(true)}
+                  className="w-full text-[18px] border-2 hover:text-blue-500 hover:font-bold rounded-lg"
+                >
+                  How to Play
+                </button>
+              </section>
+            )}
+
+            {showHowToPlay && (
+              <section className="w-[300px] border-2 border-violet-500">
+                <div className="relative">
+                  <img
+                    onClick={() => setShowHowToPlay(false)}
+                    className="absolute right-2 cursor-pointer"
+                    src={CloseIcon}
+                  />
+                </div>
+                <div className="font-bold text-[24px] text-left ml-2 mt-3">
+                  OX Game
+                </div>
+                <div className="font-bold text-[18px] text-center mt-4 underline">
+                  How to Play
+                </div>
+                <div className="text-[16px] text-left mt-2 p-2">
+                  <ol>
+                    <li className="mb-2">
+                      1. The winner is the first player to get three of their
+                      symbols (either X or O) in a row, column, or diagonal on
+                      the 3x3 grid.
+                    </li>
+                    <li className="mb-2">
+                      2. If no player has three in a row, the game is a draw.
+                    </li>
+                    <li className="mb-2">
+                      3. Players who start the game can choose their preferred
+                      symbol: X or O.
+                    </li>
+                    <li className="mb-2">
+                      4. After the game begins, player cannot choose a new
+                      symbol.
+                    </li>
+                    <li className="mb-2">
+                      5. If the player is the loser, they will have the
+                      opportunity to start the game first.
+                    </li>
+                    <li className="mb-1">
+                      6. Please don't refresh the page while playing the game to
+                      keep track of the win count.
+                    </li>
+                  </ol>
+                </div>
+                <div className="font-bold text-center text-[36px] text-orange-400">
+                  Have Fun!
+                </div>
+              </section>
+            )}
+          </div>
         </div>
       </main>
     </>
