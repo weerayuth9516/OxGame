@@ -118,7 +118,7 @@ function OxGame() {
           </section>
           <section className="w-[300px] h-[600px] flex flex-col border-2 border-violet-500 sm:ml-[2rem] xl:ml-[2rem] mt-10">
             <div className="w-[100%] flex justify-center mt-5 gap-8">
-              <div className="w-[50%] font-bold text-[20px] ml-6">
+              <div className="w-[50%] flex flex-col justify-center font-bold text-[20px] ml-6">
                 <p
                   className={`text-center text-black w-[6rem] ${
                     turnUser1 ? "bg-green-300" : "bg-yellow-300"
@@ -128,7 +128,7 @@ function OxGame() {
                 </p>
                 <button
                   onClick={handleUser1ClickX}
-                  className={`w-[50%] block text-[36px] ml-3 mb-2 ${
+                  className={`w-[46%] block text-[36px] ml-3 mb-2 ${
                     user1Symbol === "X"
                       ? "bg-blue-500 text-white rounded-full"
                       : ""
@@ -139,7 +139,7 @@ function OxGame() {
                 </button>
                 <button
                   onClick={handleUser1ClickO}
-                  className={`w-[50%] block text-[36px] ml-3 mb-4 ${
+                  className={`w-[46%] block text-[36px] ml-3 mb-4 ${
                     user1Symbol === "O"
                       ? "bg-blue-500 text-white rounded-full"
                       : ""
@@ -149,13 +149,13 @@ function OxGame() {
                   O
                 </button>
                 <div className="inline ml-3 mt-2">Win {user1Win}</div>
-                {turnUser1 && (
+                {turnUser1 ? (
                   <div className="ml-3 mt-3 text-white text-center w-[70px] bg-green-500 rounded-lg">
                     Turn
                   </div>
-                )}
+                ):(<div className="mt-10"></div>)}
               </div>
-              <div className="w-[50%] font-bold text-[20px] text-left">
+              <div className="w-[50%] flex flex-col justify-center font-bold text-[20px]">
                 <p
                   className={`text-center text-black w-[6rem] ${
                     turnUser2 ? "bg-green-300" : "bg-yellow-300"
@@ -165,7 +165,7 @@ function OxGame() {
                 </p>
                 <button
                   onClick={handleUser2ClickX}
-                  className={`w-[50%] block text-[36px] ml-3 mb-2 ${
+                  className={`w-[46%] block text-[36px] ml-3 mb-2 ${
                     user2Symbol === "X"
                       ? "bg-blue-500 text-white rounded-full"
                       : ""
@@ -176,7 +176,7 @@ function OxGame() {
                 </button>
                 <button
                   onClick={handleUser2ClickO}
-                  className={`w-[50%] block text-[36px] ml-3 mb-4 ${
+                  className={`w-[46%] block text-[36px] ml-3 mb-4 ${
                     user2Symbol === "O"
                       ? "bg-blue-500 text-white rounded-full"
                       : ""
@@ -186,11 +186,11 @@ function OxGame() {
                   O
                 </button>
                 <div className="inline ml-3 mt-2">Win {user2Win}</div>
-                {turnUser2 && (
+                {turnUser2 ? (
                   <div className="ml-3 mt-3 text-white text-center w-[70px] bg-green-500 rounded-lg">
                     Turn
                   </div>
-                )}
+                ):(<div className="mt-10"></div>)}
               </div>
             </div>
             <div className="flex justify-center items-center mt-1">
