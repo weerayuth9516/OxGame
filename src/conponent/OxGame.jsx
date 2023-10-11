@@ -117,7 +117,7 @@ function OxGame() {
               ))}
           </section>
           <section className="w-[300px] h-[600px] flex flex-col border-2 border-violet-500 sm:ml-[2rem] xl:ml-[2rem] mt-2 sm:mt-10 xl:mt-10">
-            <div className="w-[100%] flex justify-center mt-5 gap-8">
+            <div className="w-[100%] flex justify-center mt-1 sm:mt-5 xl:mt-5 gap-8">
               <div className="w-[50%] flex flex-col justify-center font-bold text-[20px] ml-6">
                 <p
                   className={`text-center text-black w-[6rem] ${
@@ -200,7 +200,7 @@ function OxGame() {
             <div className="flex justify-center items-center mt-1">
               <button
                 onClick={handleStartNewGame}
-                className="font-bold text-white text-[18px] w-[180px] h-[50px] bg-blue-500 cursor-pointer rounded-lg shadow-xl mt-5 hover:border-4 hover:border-green-500"
+                className="font-bold text-white text-[18px] w-[180px] h-[50px] bg-blue-500 cursor-pointer rounded-lg shadow-xl mt-2 sm:mt-5 xl:mt-5 hover:border-4 hover:border-green-500"
               >
                 Start New Game
               </button>
