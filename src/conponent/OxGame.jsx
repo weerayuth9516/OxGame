@@ -80,7 +80,7 @@ function OxGame() {
     <>
       <main className="w-screen flex justify-center items-center">
         <div className="w-full flex flex-wrap flex-col sm:flex-row xl:flex-row justify-center items-center">
-          <section className="w-full h-[25rem] sm:w-[37.5rem] xl:sm:w-[37.5rem] sm:h-[37.5rem] xl:h-[37.5rem] grid grid-cols-3 mt-10">
+          <section className="w-full h-[25rem] sm:w-[37.5rem] xl:sm:w-[37.5rem] sm:h-[37.5rem] xl:h-[37.5rem] grid grid-cols-3 mt-2 sm:mt-10 xl:mt-10">
             {Array(9)
               .fill(null)
               .map((_, index) => (
@@ -116,7 +116,7 @@ function OxGame() {
                 </div>
               ))}
           </section>
-          <section className="w-[300px] h-[600px] flex flex-col border-2 border-violet-500 sm:ml-[2rem] xl:ml-[2rem] mt-10">
+          <section className="w-[300px] h-[600px] flex flex-col border-2 border-violet-500 sm:ml-[2rem] xl:ml-[2rem] mt-2 sm:mt-10 xl:mt-10">
             <div className="w-[100%] flex justify-center mt-5 gap-8">
               <div className="w-[50%] flex flex-col justify-center font-bold text-[20px] ml-6">
                 <p
@@ -153,7 +153,9 @@ function OxGame() {
                   <div className="ml-3 mt-3 text-white text-center w-[70px] bg-green-500 rounded-lg">
                     Turn
                   </div>
-                ):(<div className="mt-10"></div>)}
+                ) : (
+                  <div className="mt-10"></div>
+                )}
               </div>
               <div className="w-[50%] flex flex-col justify-center font-bold text-[20px]">
                 <p
@@ -190,7 +192,9 @@ function OxGame() {
                   <div className="ml-3 mt-3 text-white text-center w-[70px] bg-green-500 rounded-lg">
                     Turn
                   </div>
-                ):(<div className="mt-10"></div>)}
+                ) : (
+                  <div className="mt-10"></div>
+                )}
               </div>
             </div>
             <div className="flex justify-center items-center mt-1">
