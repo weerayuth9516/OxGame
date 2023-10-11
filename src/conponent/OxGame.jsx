@@ -187,7 +187,7 @@ function OxGame() {
                 </button>
                 <div className="inline ml-3 mt-2">Win {user2Win}</div>
                 {turnUser2 && (
-                  <div className="ml-3 mt-3 text-white text-center w-[60px] bg-green-500 rounded-lg">
+                  <div className="ml-3 mt-3 text-white text-center w-[70px] bg-green-500 rounded-lg">
                     Turn
                   </div>
                 )}
