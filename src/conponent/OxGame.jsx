@@ -150,11 +150,11 @@ function OxGame() {
                 </button>
                 <div className="inline ml-3 mt-2">Win {user1Win}</div>
                 {turnUser1 ? (
-                  <div className="ml-3 mt-3 text-white text-center w-[70px] bg-green-500 rounded-lg">
+                  <div className="ml-3 mt-3 text-white text-center w-[70px] h-[30px] bg-green-500 rounded-lg">
                     Turn
                   </div>
                 ) : (
-                  <div className="mt-10"></div>
+                  <div className="mt-3 w-[70px] h-[30px]"></div>
                 )}
               </div>
               <div className="w-[50%] flex flex-col justify-center font-bold text-[20px]">
@@ -193,11 +193,11 @@ function OxGame() {
                     Turn
                   </div>
                 ) : (
-                  <div className="mt-10"></div>
+                  <div className="mt-3 w-[70px] h-[30px]"></div>
                 )}
               </div>
             </div>
-            <div className="flex justify-center items-center mt-1">
+            <div className="flex justify-center items-center">
               <button
                 onClick={handleStartNewGame}
                 className="font-bold text-white text-[18px] w-[180px] h-[50px] bg-blue-500 cursor-pointer rounded-lg shadow-xl mt-2 sm:mt-5 xl:mt-5 hover:border-4 hover:border-green-500"
