@@ -197,7 +197,7 @@ function OxGame() {
                 )}
               </div>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="flex justify-center items-center mr-1">
               <button
                 onClick={handleStartNewGame}
                 className="font-bold text-white text-[18px] w-[180px] h-[50px] bg-blue-500 cursor-pointer rounded-lg shadow-xl mt-2 sm:mt-5 xl:mt-5 hover:border-4 hover:border-green-500"
